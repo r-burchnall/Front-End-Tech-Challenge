@@ -1,1 +1,5 @@
-<p>item-list works!</p>
+<div class="container">
+  <div class="row">
+    <app-item class="col-12" *ngFor="let item of TodoItems" [Item]="item"></app-item>
+  </div>
+</div>

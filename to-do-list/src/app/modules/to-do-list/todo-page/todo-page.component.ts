@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TodoItem} from '../../../shared/models/TodoItem';
+import {ItemState} from '../../../shared/models/ItemState';
 
 @Component({
   selector: 'app-todo-page',
@@ -13,6 +14,11 @@ export class TodoPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.todoItems = [
+      new TodoItem('Item 1', null, new Date(), null, ItemState.Open),
+      new TodoItem('Item 2', null, new Date(), null, ItemState.Open),
+      new TodoItem('Item 3', null, new Date(), null, ItemState.Open),
+    ];
   }
 
 }
