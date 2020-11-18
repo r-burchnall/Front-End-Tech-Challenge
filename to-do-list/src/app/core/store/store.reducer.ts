@@ -13,7 +13,13 @@ const storeReducer = createReducer(
     switch (storeAction) {
       case TodoStoreAction.Create:
         if (todoItem) {
-          state.TodoList.push(todoItem);
+          const items = Array.from(state.TodoList);
+          items.push(todoItem);
+
+          return {
+            ...state,
+            TodoList: items
+          };
         }
         return state;
 

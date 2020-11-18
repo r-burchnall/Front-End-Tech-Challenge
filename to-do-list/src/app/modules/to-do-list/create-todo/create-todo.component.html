@@ -1,15 +1,20 @@
 <div class="wide">
-  <button (click)="Open(Create)">+</button>
+  <app-primary-button (click)="Open(Create)" [text]="'Create a new item'"></app-primary-button>
 </div>
 
 <ng-template let-modal #Create>
-  <div class="form-group">
-    <label for="Content">Todo</label>
-    <input type="text" class="form-control" id="Content" [(ngModel)]="newTodo.Content"  placeholder="Enter your todo...">
+  <div class="form">
+    <div class="form-group">
+      <label for="Content">Todo</label>
+      <input type="text" class="form-control" id="Content" [(ngModel)]="newTodo.Content"
+             placeholder="Enter your todo...">
+    </div>
+    <div class="form-group">
+      <label for="DueDate">Todo</label>
+      <input type="datetime-local" class="form-control" id="DueDate" [(ngModel)]="newTodo.DueDate"
+             placeholder="Optional: Choose a due date">
+    </div>
+    <app-primary-button (click)="CreateTodo()" [text]="'Create'"></app-primary-button>
   </div>
-  <div class="form-group">
-    <label for="DueDate">Todo</label>
-    <input type="datetime-local" class="form-control" id="DueDate" [(ngModel)]="newTodo.DueDate" placeholder="Optional: Choose a due date">
-  </div>
-  <app-primary-button (click)="CreateTodo()">Create</app-primary-button>
+
 </ng-template>
