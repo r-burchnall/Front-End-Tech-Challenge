@@ -7,5 +7,5 @@ export class TodoStoreState {
     new TodoItem('Item 2', null, new Date(), null, ItemState.Done),
     new TodoItem('Item 3', null, new Date(), null, ItemState.Open, true),
   ];
-  SearchTerm = 'test';
+  SearchTerm = 'Default Search Value';
 }

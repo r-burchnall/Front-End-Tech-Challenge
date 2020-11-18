@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <input (click)="AttemptToComplete()" [checked]="Item.State == ItemState.Done" type="checkbox">
+    <div class="col-12 item">
+      <input (click)="AttemptToComplete()" [checked]="Item.State == ItemState.Done" (change)="UpdateItem()" type="checkbox">
       {{Item.Content}}
     </div>
   </div>

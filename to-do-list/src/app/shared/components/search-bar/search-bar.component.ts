@@ -16,7 +16,7 @@ export class SearchBarComponent implements AfterViewInit, OnDestroy {
   searchObservable$: Observable<string>;
   private sub: Subscription;
 
-  constructor(protected store: Store<TodoStoreState>) {
+  constructor(protected store: Store<{TodoStore: TodoStoreState}>) {
   }
 
   ConfirmSearch(): void {
@@ -28,7 +28,7 @@ export class SearchBarComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.searchObservable$ = this.store.select(state => state.SearchTerm);
+    this.searchObservable$ = this.store.select(state => state.TodoStore.SearchTerm);
     this.sub = this.searchObservable$.subscribe((next) => {
       if (next) {
         this.searchTerm = next;

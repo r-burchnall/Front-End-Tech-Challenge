@@ -15,9 +15,13 @@ export class TodoPageComponent {
   search$: Observable<string>;
   todoItems$: Observable<TodoItem[]>;
 
-  constructor(store: Store<TodoStoreState>) {
+  constructor(store: Store<{ TodoStore: TodoStoreState }>) {
     console.log(store);
-    this.todoItems$ = store.select(s => s.TodoList);
-    this.search$ = store.select(s => s.SearchTerm);
+    this.todoItems$ = store.select(s => s.TodoStore.TodoList);
+    this.search$ = store.select(s => s.TodoStore.SearchTerm);
+
+    this.todoItems$.subscribe((next) => {
+      console.log("Todo items", next);
+    });
   }
 }

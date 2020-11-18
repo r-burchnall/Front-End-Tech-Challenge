@@ -14,7 +14,7 @@ import {TodoStoreAction} from '../../../shared/models/TodoStoreAction';
 export class CreateTodoComponent {
   newTodo = new TodoItem('');
 
-  constructor(protected store: Store<TodoStoreState>,
+  constructor(protected store: Store<{TodoStore: TodoStoreState}>,
               protected modalService: NgbModal) {
   }
 

@@ -16,7 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({store: StoreReducer}, {}),
+    StoreModule.forRoot({TodoStore: StoreReducer}, {}),
     FormsModule,
     ToDoListModule,
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),

@@ -1,0 +1,11 @@
+.list {
+  margin-top: 15px;
+  overflow-y: auto;
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+
+  .item {
+    padding: 0;
+  }
+}

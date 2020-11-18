@@ -1,3 +1,15 @@
 input {
   margin-right: 10px;
 }
+
+.item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: 1px solid grey;
+
+  .bin {
+    margin-left: auto;
+  }
+}
