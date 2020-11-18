@@ -4,7 +4,7 @@ import {TodoItem} from '../../../shared/models/TodoItem';
 @Component({
   selector: 'app-todo-page',
   templateUrl: './todo-page.component.html',
-  styleUrls: ['./todo-page.component.css']
+  styleUrls: ['./todo-page.component.scss']
 })
 export class TodoPageComponent implements OnInit {
   todoItems: TodoItem[];
