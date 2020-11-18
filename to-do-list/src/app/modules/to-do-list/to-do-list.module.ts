@@ -4,19 +4,21 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { ItemComponent } from './item/item.component';
 import { TodoPageComponent } from './todo-page/todo-page.component';
 import {SharedModule} from '../../shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CreateTodoComponent } from './create-todo/create-todo.component';
 
 @NgModule({
   providers: [
     ReactiveFormsModule
   ],
-  declarations: [ItemListComponent, ItemComponent, TodoPageComponent],
+  declarations: [ItemListComponent, ItemComponent, TodoPageComponent, CreateTodoComponent],
   exports: [
     TodoPageComponent
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class ToDoListModule { }

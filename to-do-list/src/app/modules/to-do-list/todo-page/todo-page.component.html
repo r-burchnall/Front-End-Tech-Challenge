@@ -4,8 +4,9 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <app-search-bar></app-search-bar>
-      <app-item-list [TodoItems]="todoItems"></app-item-list>
+      <app-search-bar [placeholder]="'Search...'"></app-search-bar>
+      <app-create-todo></app-create-todo>
+      <app-item-list [TodoItems]="todoItems$ | async"></app-item-list>
     </div>
   </div>
 </div>
