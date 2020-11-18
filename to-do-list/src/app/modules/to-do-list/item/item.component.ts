@@ -27,4 +27,8 @@ export class ItemComponent implements OnInit {
   UpdateItem(): void {
     this.store.dispatch(update({storeAction: TodoStoreAction.Update, todoItem: this.Item}));
   }
+
+  DeleteItem(): void {
+    this.store.dispatch(update({storeAction: TodoStoreAction.Delete, todoItem: this.Item}));
+  }
 }

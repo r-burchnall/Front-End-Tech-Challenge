@@ -16,7 +16,7 @@ export class TodoItem {
               modifiedAt: Date = new Date(),
               state: ItemState = ItemState.Open,
               archived: boolean = false) {
-    // this.Id = uuid();
+    this.Id = uuid();
     this.Content = content;
     this.DueDate = dueDate;
     this.CreatedAt = createdAt;

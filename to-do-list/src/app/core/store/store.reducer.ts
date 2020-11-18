@@ -25,14 +25,24 @@ const storeReducer = createReducer(
 
       case TodoStoreAction.Delete:
         if (todoItem) {
-          state.TodoList = state.TodoList.filter(i => i.Id != todoItem.Id);
+          let items = Array.from(state.TodoList);
+          items = items.filter(i => i.Id != todoItem.Id);
+          return {
+            ...state,
+            TodoList: items
+          };
         }
         return state;
 
       case TodoStoreAction.Update:
         if (todoItem) {
-          state.TodoList = state.TodoList.filter(i => i.Id != todoItem.Id);
-          state.TodoList.push(todoItem);
+          let items = Array.from(state.TodoList);
+          items = items.filter(i => i.Id != todoItem.Id);
+          items.push(todoItem);
+          return {
+            ...state,
+            TodoList: items
+          };
         }
         return state;
 
